@@ -1,0 +1,60 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "data/home.json"
+        fields:
+          - { label: "Hero Title Line 1", name: "hero_line1", widget: "string" }
+          - { label: "Hero Title Line 2", name: "hero_line2", widget: "string" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "string" }
+          - { label: "Hero Description", name: "hero_desc", widget: "text" }
+          - { label: "About Quote", name: "about_quote", widget: "text" }
+          - { label: "About Body", name: "about_body", widget: "text" }
+
+  - name: "services"
+    label: "Services"
+    folder: "data/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Service Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Icon (emoji)", name: "icon", widget: "string" }
+
+  - name: "team"
+    label: "Team Members"
+    folder: "data/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Photo", name: "photo", widget: "image", required: false }
+
+  - name: "clients"
+    label: "Clients"
+    folder: "data/clients"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Client Name", name: "name", widget: "string" }
+      - { label: "Logo", name: "logo", widget: "image", required: false }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "data/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Quote", name: "quote", widget: "text" }
+      - { label: "Author Name", name: "author", widget: "string" }
+      - { label: "Author Role", name: "role", widget: "string" }
