@@ -1,1 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AYRA Consultants — Real Estate & Business Solutions</title>
+<meta name="description" content="AYRA Consultants — Pakistan's premier real estate, lease management, asset management and digital media consultancy since 2014."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Barlow:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F8F7F4;
+  --bg2:#FFFFFF;
+  --bg3:#F2F0EC;
+  --surface:rgba(0,0,0,0.03);
+  --surface2:rgba(0,0,0,0.05);
+  --border:rgba(0,0,0,0.08);
+  --border2:rgba(0,0,0,0.14);
+  --dark:#0D0D0D;
+  --dark2:#1A1A1A;
+  --muted:#6B6B6B;
+  --muted2:#9A9A9A;
+  --blue:#1A4ED8;
+  --blue2:#2563EB;
+  --blue3:#3B82F6;
+  --cyan:#0EA5E9;
+  --accent:#1E3A8A;
+  --head:'Space Grotesk',sans-serif;
+  --serif:'Barlow',sans-serif;
+  --body:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--dark);overflow-x:hidden}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--blue2);border-radius:2px}
 
+/* ══ NAV ══ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  height:76px;padding:0 56px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(248,247,244,0.88);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  transition:all 0.4s
+}
+nav.scrolled{background:rgba(248,247,244,0.98);box-shadow:0 2px 32px rgba(0,0,0,0.07)}
+
+.nav-logo{display:flex;align-items:center;gap:13px;text-decoration:none}
+.nav-emblem{
+  width:42px;height:42px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative
+}
+/* No background box — just the emblem clean */
+.nav-emblem img{
+  width:38px;height:38px;
+  object-fit:contain;
+  /* Keep original black/grey colors */
+}
+.nav-divider{width:1px;height:28px;background:var(--border);margin:0 2px}
+.nav-wordmark .brand{
+  font-family:var(--head);font-size:16px;font-weight:700;
+  color:var(--dark);letter-spacing:5px;line-height:1;display:block
+}
+.nav-wordmark .sub{
+  font-size:7.5px;font-weight:500;color:var(--blue2);
+  letter-spacing:3.5px;text-transform:uppercase;margin-top:3px;display:block
+}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{
+  font-family:var(--head);font-size:11px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--muted);text-decoration:none;
+  transition:color 0.3s;font-weight:500;position:relative
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-4px;left:0;
+  width:0;height:1.5px;background:var(--blue2);transition:width 0.3s
+}
+.nav-links a:hover{color:var(--dark)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+  font-family:var(--head);font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--bg2);background:var(--dark);
+  padding:11px 26px;text-decoration:none;font-weight:700;
+  transition:all 0.3s;border:1.5px solid var(--dark)
+}
+.nav-cta:hover{background:var(--blue2);border-color:var(--blue2)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{width:22px;height:1.5px;background:var(--dark);display:block;transition:all 0.3s}
+
+/* ══ HERO ══ */
+.hero{
+  min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:stretch;overflow:hidden;position:relative
+}
+/* Left — light content */
+.hero-left{
+  background:var(--bg2);
+  padding:140px 60px 80px;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;z-index:2;
+  border-right:1px solid var(--border)
+}
+/* Subtle dot pattern */
+.hero-left::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(0,0,0,0.06) 1px,transparent 1px);
+  background-size:28px 28px;pointer-events:none;opacity:0.5
+}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--bg3);border:1px solid var(--border2);
+  padding:8px 18px;width:fit-content;
+  font-family:var(--head);font-size:9px;letter-spacing:3px;
+  text-transform:uppercase;color:var(--muted);margin-bottom:36px;font-weight:600
+}
+.hero-pill-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--blue2);box-shadow:0 0 6px rgba(37,99,235,0.5);
+  animation:blink 2s infinite
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero-title{
+  font-family:var(--serif);
+  font-size:clamp(60px,7vw,100px);
+  font-weight:800;line-height:0.92;
+  letter-spacing:-2px;color:var(--dark);
+  margin-bottom:12px;position:relative;z-index:1
+}
+.hero-title em{font-style:italic;color:var(--blue2);font-weight:800}
+.hero-title strong{font-weight:900;display:block}
+.hero-subtitle{
+  font-family:var(--head);font-size:15px;font-weight:700;
+  color:var(--muted2);letter-spacing:5px;text-transform:uppercase;
+  margin-bottom:32px;position:relative;z-index:1
+}
+.hero-rule{
+  width:56px;height:2px;
+  background:linear-gradient(90deg,var(--blue2),var(--cyan));
+  margin-bottom:28px
+}
+.hero-desc{
+  font-size:15px;color:var(--muted);line-height:1.9;
+  max-width:420px;margin-bottom:44px;position:relative;z-index:1
+}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:64px;position:relative;z-index:1}
+.btn-dark{
+  font-family:var(--head);font-size:10px;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--bg2);background:var(--dark);
+  padding:15px 36px;text-decoration:none;font-weight:700;
+  border:1.5px solid var(--dark);transition:all 0.35s
+}
+.btn-dark:hover{background:var(--blue2);border-color:var(--blue2);transform:translateY(-1px)}
+.btn-outline{
+  font-family:var(--head);font-size:10px;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--dark);background:transparent;
+  padding:15px 36px;text-decoration:none;font-weight:600;
+  border:1.5px solid var(--border2);transition:all 0.35s
+}
+.btn-outline:hover{border-color:var(--dark);background:var(--bg3)}
+.hero-stats{display:flex;gap:0;position:relative;z-index:1}
+.hst{padding-right:32px;margin-right:32px;border-right:1px solid var(--border)}
+.hst:last-child{border-right:none;margin-right:0;padding-right:0}
+.hst-n{
+  font-family:var(--serif);font-size:40px;font-weight:800;
+  color:var(--dark);line-height:1;letter-spacing:-1px
+}
+.hst-n em{font-style:normal;color:var(--blue2);font-weight:800}
+.hst-l{font-family:var(--head);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted2);margin-top:6px}
+
+/* Right — dark graphic panel */
+.hero-right{
+  background:var(--dark);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden
+}
+/* Grid overlay */
+.hero-right-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
+  background-size:60px 60px
+}
+/* Blue glow */
+.hero-glow{
+  position:absolute;width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(37,99,235,0.15),transparent 70%);
+  pointer-events:none
+}
+/* Architectural lines */
+.hero-arch{position:absolute;inset:0}
+.hero-arch svg{width:100%;height:100%}
+
+/* EMBLEM DISPLAY — large, centered, clean */
+.hero-emblem-display{
+  position:relative;z-index:10;
+  display:flex;flex-direction:column;align-items:center;gap:28px
+}
+/* Outer ring */
+.emblem-ring{
+  width:300px;height:300px;border-radius:50%;
+  border:1px solid rgba(255,255,255,0.08);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+  animation:rotateSlow 25s linear infinite
+}
+.emblem-ring::before{
+  content:'';position:absolute;
+  width:260px;height:260px;border-radius:50%;
+  border:1px solid rgba(37,99,235,0.2)
+}
+.emblem-ring::after{
+  content:'';position:absolute;inset:0;border-radius:50%;
+  background:
+    radial-gradient(2px 2px at 50% 1%,rgba(14,165,233,0.8),transparent),
+    radial-gradient(2px 2px at 99% 50%,rgba(14,165,233,0.8),transparent),
+    radial-gradient(2px 2px at 50% 99%,rgba(14,165,233,0.8),transparent),
+    radial-gradient(2px 2px at 1% 50%,rgba(14,165,233,0.8),transparent)
+}
+@keyframes rotateSlow{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+/* Inner circle with emblem — counter-rotates to stay upright */
+.emblem-circle{
+  width:180px;height:180px;border-radius:50%;
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.06);
+  display:flex;align-items:center;justify-content:center;
+  animation:rotateSlow 25s linear infinite reverse;
+}
+.emblem-circle img{
+  width:110px;height:110px;object-fit:contain;
+  filter:brightness(0) invert(1);
+}
+.emblem-label{
+  font-family:var(--head);font-size:9px;letter-spacing:5px;
+  text-transform:uppercase;color:rgba(255,255,255,0.3);
+  text-align:center
+}
+/* Corner text labels */
+.h-corner{
+  position:absolute;font-family:var(--head);font-size:8px;
+  letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.12)
+}
+.h-tl{top:100px;left:32px}
+.h-tr{top:100px;right:32px;text-align:right}
+.h-bl{bottom:60px;left:32px}
+.h-br{bottom:60px;right:32px;text-align:right}
+
+/* Scroll hint */
+.hero-scroll{
+  position:absolute;bottom:36px;left:56px;z-index:20;
+  display:flex;align-items:center;gap:14px
+}
+.scroll-line{width:40px;height:1px;background:var(--border2);position:relative;overflow:hidden}
+.scroll-line::after{
+  content:'';position:absolute;top:0;left:-100%;
+  width:100%;height:100%;background:var(--blue2);
+  animation:slide 2s ease infinite
+}
+@keyframes slide{0%{left:-100%}100%{left:100%}}
+.hero-scroll span{font-family:var(--head);font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--muted2)}
+
+/* ══ TICKER ══ */
+.ticker{
+  background:var(--dark);padding:15px 0;overflow:hidden;
+  border-top:1px solid rgba(255,255,255,0.06);
+  border-bottom:1px solid rgba(255,255,255,0.06)
+}
+.ticker-track{display:inline-flex;animation:tick 35s linear infinite;white-space:nowrap}
+.ticker-item{
+  display:inline-flex;align-items:center;gap:14px;padding:0 36px;
+  font-family:var(--head);font-size:10px;letter-spacing:3px;
+  text-transform:uppercase;color:rgba(255,255,255,0.35)
+}
+.ticker-sep{color:var(--cyan);font-size:12px}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ══ SECTION BASE ══ */
+.section{padding:120px 56px}
+.inner{max-width:1200px;margin:0 auto}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--head);font-size:9px;letter-spacing:4px;
+  text-transform:uppercase;color:var(--blue2);margin-bottom:20px;font-weight:600
+}
+.eyebrow::before{content:'';width:24px;height:1.5px;background:var(--blue2)}
+.sec-h{
+  font-family:var(--serif);
+  font-size:clamp(40px,4.5vw,64px);
+  font-weight:800;letter-spacing:-1px;line-height:1.0;
+  color:var(--dark);margin-bottom:20px
+}
+.sec-h em{font-style:italic;color:var(--blue2)}
+.sec-h strong{font-weight:900}
+.sec-p{font-size:15px;color:var(--muted);line-height:1.85;max-width:500px}
+.gold-rule{width:44px;height:2px;background:linear-gradient(90deg,var(--blue2),var(--cyan));margin:24px 0}
+
+/* ══ ABOUT ══ */
+.about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center;margin-top:72px}
+
+/* Visual */
+.about-vis{position:relative;height:520px}
+.about-bg{
+  position:absolute;top:0;left:0;right:48px;bottom:48px;
+  background:var(--bg);border:1px solid var(--border)
+}
+/* Geometric SVG graphic */
+.about-svg{
+  position:absolute;top:40px;left:40px;right:88px;bottom:88px;
+  display:flex;align-items:center;justify-content:center
+}
+.about-svg svg{width:100%;height:100%;opacity:0.08}
+/* Emblem float — NO BOX, just elegant circle */
+.about-emblem-float{
+  position:absolute;
+  top:50%;left:calc(50% - 20px);
+  transform:translate(-50%,-50%);
+  width:128px;height:128px;border-radius:50%;
+  background:var(--bg2);
+  box-shadow:0 8px 48px rgba(0,0,0,0.08),0 0 0 1px var(--border);
+  display:flex;align-items:center;justify-content:center
+}
+.about-emblem-float img{
+  width:72px;height:72px;object-fit:contain
+  /* Natural colors — black/grey emblem on white bg */
+}
+/* Corner accent */
+.about-accent{
+  position:absolute;bottom:0;right:0;
+  width:156px;height:156px;
+  background:var(--dark);
+  display:flex;flex-direction:column;align-items:center;justify-content:center
+}
+.about-yr{font-family:var(--serif);font-size:40px;font-weight:300;color:var(--bg2);letter-spacing:-2px}
+.about-yr-l{font-family:var(--head);font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:4px}
+
+/* Text */
+.about-quote{
+  font-family:var(--head);font-size:18px;font-weight:600;
+  color:var(--dark);line-height:1.6;
+  padding-left:20px;border-left:3px solid var(--blue2);margin-bottom:24px
+}
+.about-body{font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:36px}
+.about-vals{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.aval{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 16px;border:1px solid var(--border);
+  background:var(--bg);
+  font-family:var(--head);font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--muted);
+  transition:all 0.3s;cursor:default
+}
+.aval:hover{border-color:var(--blue2);color:var(--dark);background:rgba(37,99,235,0.04)}
+.aval-dot{width:5px;height:5px;border-radius:50%;background:var(--blue2);flex-shrink:0}
+
+/* ══ SERVICES ══ */
+.services{background:var(--dark);position:relative;overflow:hidden}
+.services::before{
+  content:'';position:absolute;top:-200px;left:-200px;
+  width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(37,99,235,0.07),transparent 70%);
+  pointer-events:none
+}
+.services .eyebrow{color:rgba(14,165,233,0.8)}
+.services .eyebrow::before{background:rgba(14,165,233,0.8)}
+.services .sec-h{color:#fff}
+.services .sec-p{color:rgba(255,255,255,0.4)}
+.svc-header{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:64px}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06)}
+.scard{
+  background:var(--dark);padding:44px 36px 60px;
+  position:relative;overflow:hidden;cursor:default;transition:background 0.4s
+}
+.scard::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--blue2),transparent);
+  transform:scaleX(0);transition:transform 0.5s
+}
+.scard:hover{background:#111}
+.scard:hover::after{transform:scaleX(1)}
+.scard-num{font-family:var(--head);font-size:10px;letter-spacing:3px;color:var(--blue3);margin-bottom:24px;font-weight:600}
+.scard-icon{
+  width:48px;height:48px;border:1px solid rgba(255,255,255,0.08);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;margin-bottom:22px;background:rgba(255,255,255,0.02);
+  transition:all 0.4s
+}
+.scard:hover .scard-icon{border-color:rgba(37,99,235,0.5);background:rgba(37,99,235,0.06)}
+.scard-title{
+  font-family:var(--head);font-size:12px;font-weight:700;
+  color:#fff;letter-spacing:1px;margin-bottom:14px;text-transform:uppercase
+}
+.scard-desc{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.85}
+.scard-arrow{
+  position:absolute;bottom:28px;right:28px;
+  width:28px;height:28px;border:1px solid rgba(255,255,255,0.1);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:12px;color:rgba(255,255,255,0.3);
+  opacity:0;transition:all 0.4s
+}
+.scard:hover .scard-arrow{opacity:1;border-color:var(--cyan);color:var(--cyan);transform:rotate(45deg)}
+
+/* ══ NUMBERS ══ */
+.numbers{
+  background:var(--blue2);padding:80px 56px;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;position:relative;overflow:hidden
+}
+.numbers::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);
+  background-size:48px 48px
+}
+.nstat{
+  padding:40px;text-align:center;
+  border-right:1px solid rgba(255,255,255,0.15);
+  position:relative;z-index:1
+}
+.nstat:last-child{border-right:none}
+.nstat-n{font-family:var(--serif);font-size:64px;font-weight:800;color:#fff;letter-spacing:-2px;line-height:1}
+.nstat-n em{font-style:normal;font-size:44px;color:rgba(255,255,255,0.6)}
+.nstat-l{font-family:var(--head);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:10px}
+
+/* ══ CLIENTS ══ */
+.clients{background:var(--bg)}
+.clients-head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:60px}
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.ccard{
+  background:var(--bg2);padding:28px 20px;min-height:96px;
+  display:flex;align-items:center;justify-content:center;
+  transition:all 0.35s;position:relative;overflow:hidden
+}
+.ccard::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--blue2),var(--cyan));
+  transform:scaleX(0);transition:transform 0.35s
+}
+.ccard:hover{background:var(--dark)}
+.ccard:hover::before{transform:scaleX(1)}
+.ccard-n{
+  font-family:var(--head);font-size:11px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--muted2);text-align:center;transition:color 0.35s
+}
+.ccard:hover .ccard-n{color:rgba(255,255,255,0.6)}
+
+/* ══ TESTIMONIALS ══ */
+.testi{background:var(--bg2)}
+.tgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:64px}
+.tcard{
+  padding:44px;border:1px solid var(--border);
+  position:relative;overflow:hidden;transition:all 0.4s;background:var(--bg2)
+}
+.tcard::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--blue2),var(--cyan));
+  transform:scaleX(0);transition:transform 0.4s
+}
+.tcard:hover{box-shadow:0 16px 48px rgba(0,0,0,0.07);border-color:rgba(0,0,0,0.12)}
+.tcard:hover::before{transform:scaleX(1)}
+.tcard-q{
+  font-family:var(--serif);font-size:72px;line-height:0.7;
+  color:var(--blue2);opacity:0.2;display:block;margin-bottom:20px
+}
+.tcard-t{font-family:var(--head);font-size:15px;font-weight:400;color:var(--dark);line-height:1.8;margin-bottom:28px}
+.tcard-div{width:28px;height:1.5px;background:var(--blue2);margin-bottom:18px}
+.tcard-a{font-family:var(--head);font-size:11px;font-weight:700;color:var(--dark);letter-spacing:1.5px;text-transform:uppercase}
+.tcard-r{font-size:11px;color:var(--muted);margin-top:4px}
+
+/* ══ TEAM ══ */
+.team{background:var(--bg)}
+.tgrid2{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:64px}
+.tmcard{
+  background:var(--bg2);border:1px solid var(--border);
+  overflow:hidden;transition:all 0.4s
+}
+.tmcard:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(0,0,0,0.08);border-color:rgba(37,99,235,0.2)}
+.tmcard-top{
+  height:188px;
+  background:linear-gradient(135deg,var(--bg),var(--bg3));
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden
+}
+.tmcard-mono{
+  font-family:var(--serif);font-size:64px;font-weight:300;
+  color:rgba(0,0,0,0.06);letter-spacing:-3px
+}
+.tmcard-bar{
+  position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--blue2),var(--cyan));
+  transform:scaleX(0);transform-origin:left;transition:transform 0.4s
+}
+.tmcard:hover .tmcard-bar{transform:scaleX(1)}
+.tmcard-body{padding:24px 20px}
+.tmcard-name{font-family:var(--head);font-size:13px;font-weight:600;color:var(--dark);letter-spacing:-0.2px}
+.tmcard-role{font-family:var(--head);font-size:9px;color:var(--blue2);margin-top:5px;letter-spacing:2.5px;text-transform:uppercase}
+
+/* ══ WHY AYRA ══ */
+.why{background:var(--dark);position:relative;overflow:hidden}
+.why::before{
+  content:'AYRA';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  font-family:var(--serif);font-size:260px;font-weight:300;
+  color:rgba(255,255,255,0.015);letter-spacing:-12px;
+  pointer-events:none;user-select:none;white-space:nowrap
+}
+.why .eyebrow{color:rgba(14,165,233,0.7)}
+.why .eyebrow::before{background:rgba(14,165,233,0.7)}
+.why .sec-h{color:#fff}
+.why .sec-p{color:rgba(255,255,255,0.4)}
+.why-grid{display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:center;position:relative;z-index:1}
+.why-feats{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.wf{
+  padding:28px;border:1px solid rgba(255,255,255,0.06);
+  background:rgba(255,255,255,0.02);border-radius:2px;transition:all 0.4s
+}
+.wf:hover{border-color:rgba(37,99,235,0.35);background:rgba(37,99,235,0.04)}
+.wf-icon{font-size:26px;margin-bottom:14px;display:block}
+.wf-title{font-family:var(--head);font-size:11px;font-weight:700;color:#fff;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.wf-desc{font-size:12px;color:rgba(255,255,255,0.38);line-height:1.8}
+
+/* ══ CONTACT ══ */
+.contact{background:var(--bg)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;margin-top:64px}
+.ci{display:flex;flex-direction:column}
+.ci-item{display:flex;gap:20px;align-items:flex-start;padding:24px 0;border-bottom:1px solid var(--border)}
+.ci-item:last-child{border-bottom:none}
+.ci-icon{
+  width:42px;height:42px;border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;flex-shrink:0;background:var(--bg2)
+}
+.ci-label{font-family:var(--head);font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--blue2);margin-bottom:6px;font-weight:600}
+.ci-val{font-size:14px;color:var(--dark);line-height:1.7}
+.cform{background:var(--bg2);padding:48px;border:1px solid var(--border);box-shadow:0 8px 40px rgba(0,0,0,0.05)}
+.cform-h{font-family:var(--head);font-size:24px;font-weight:700;color:var(--dark);margin-bottom:6px;letter-spacing:-0.5px}
+.cform-s{font-size:13px;color:var(--muted);margin-bottom:32px}
+.fg{margin-bottom:18px}
+.fg label{font-family:var(--head);font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:9px;font-weight:600}
+.fg input,.fg textarea,.fg select{
+  width:100%;background:var(--bg);border:1px solid var(--border);
+  padding:13px 16px;font-family:var(--body);font-size:14px;
+  color:var(--dark);outline:none;transition:border-color 0.3s;appearance:none
+}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--muted2)}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--blue2);background:rgba(37,99,235,0.02)}
+.fg select option{background:var(--bg2)}
+.fg textarea{height:108px;resize:none}
+.fsub{
+  width:100%;background:var(--dark);color:#fff;border:none;
+  padding:15px;cursor:pointer;font-family:var(--head);
+  font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  font-weight:700;transition:all 0.3s
+}
+.fsub:hover{background:var(--blue2);transform:translateY(-1px)}
+
+/* ══ FOOTER ══ */
+footer{background:var(--dark);padding:72px 56px 32px;border-top:1px solid rgba(255,255,255,0.06)}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px}
+/* Footer logo — emblem + wordmark */
+.footer-logo{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.footer-logo img{
+  height:34px;width:auto;
+  filter:brightness(0) invert(1);opacity:0.8
+}
+.footer-logo-text .fn{font-family:var(--head);font-size:15px;font-weight:700;color:#fff;letter-spacing:5px;line-height:1;display:block}
+.footer-logo-text .fs{font-size:7.5px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:3px;display:block;font-family:var(--head)}
+.footer-tag{font-size:13px;color:rgba(255,255,255,0.28);line-height:1.85;max-width:268px;margin-bottom:28px}
+.footer-soc{display:flex;gap:10px}
+.fsoc{
+  width:34px;height:34px;border:1px solid rgba(255,255,255,0.1);
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;color:rgba(255,255,255,0.35);
+  text-decoration:none;font-family:var(--head);font-weight:700;
+  transition:all 0.3s
+}
+.fsoc:hover{border-color:var(--blue2);color:var(--blue3)}
+.footer-col h4{font-family:var(--head);font-size:8px;letter-spacing:4px;text-transform:uppercase;color:rgba(14,165,233,0.6);margin-bottom:22px;font-weight:600}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:11px}
+.footer-col a{font-size:13px;color:rgba(255,255,255,0.28);text-decoration:none;transition:color 0.3s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-copy,.footer-ntn{font-family:var(--head);font-size:10px;color:rgba(255,255,255,0.18);letter-spacing:1px}
+
+/* ══ MOBILE ══ */
+.mob-menu{
+  display:none;position:fixed;
+  top:76px;left:0;right:0;bottom:0;
+  background:rgba(248,247,244,0.98);backdrop-filter:blur(20px);
+  z-index:400;flex-direction:column;padding:40px 32px
+}
+.mob-menu.open{display:flex}
+.mob-menu a{
+  font-family:var(--serif);font-size:26px;font-weight:300;
+  color:var(--dark);text-decoration:none;padding:18px 0;
+  border-bottom:1px solid var(--border);transition:color 0.3s
+}
+.mob-menu a:hover{color:var(--blue2)}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:1100px){
+  .hero{grid-template-columns:1fr}
+  .hero-right{height:420px}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr;gap:48px}
+  .about-vis{height:300px}
+  .why-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  nav{padding:0 20px;height:68px}
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .section{padding:80px 20px}
+  .hero-left{padding:108px 20px 60px}
+  .hero-stats{flex-wrap:wrap;gap:20px}
+  .hst{border-right:none;padding-right:0;margin-right:0}
+  .numbers{grid-template-columns:repeat(2,1fr);padding:60px 20px}
+  .cgrid{grid-template-columns:repeat(2,1fr)}
+  .clients-head{grid-template-columns:1fr}
+  .tgrid{grid-template-columns:1fr}
+  .tgrid2{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr;gap:40px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+  .svc-header{grid-template-columns:1fr}
+  .why-feats{grid-template-columns:1fr}
+  footer{padding:56px 20px 24px}
+  .cform{padding:28px 20px}
+}
+@media(max-width:480px){
+  .tgrid2{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .about-vals{grid-template-columns:1fr}
+  .numbers{grid-template-columns:1fr}
+  .hero-right{height:320px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#home" class="nav-logo">
+    <div class="nav-emblem">
+      <img src="emblem.png" alt="AYRA Consultants Emblem"/>
+    </div>
+    <div class="nav-divider"></div>
+    <div class="nav-wordmark">
+      <span class="brand">AYRA</span>
+      <span class="sub">Consultants</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get In Touch</a>
+  <button class="hamburger" id="ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mob">
+  <a href="#about" onclick="closeMob()">About</a>
+  <a href="#services" onclick="closeMob()">Services</a>
+  <a href="#clients" onclick="closeMob()">Clients</a>
+  <a href="#team" onclick="closeMob()">Team</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <!-- LEFT — light -->
+  <div class="hero-left">
+    <div class="hero-pill">
+      <span class="hero-pill-dot"></span>
+      Pakistan's Premier Consultancy · Est. 2014
+    </div>
+    <h1 class="hero-title">
+      <em>Elevate</em>
+      <strong>Your Assets.</strong>
+    </h1>
+    <p class="hero-subtitle">Amplify Your Brand.</p>
+    <div class="hero-rule"></div>
+    <p class="hero-desc">360° real estate and business solutions — from lease management to digital campaigns. Pan-Pakistan operations, global reach for overseas clients.</p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-dark">Explore Services</a>
+      <a href="#contact" class="btn-outline">Start a Conversation</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hst"><div class="hst-n">10<em>+</em></div><div class="hst-l">Years</div></div>
+      <div class="hst"><div class="hst-n">200<em>+</em></div><div class="hst-l">Clients</div></div>
+      <div class="hst"><div class="hst-n">360<em>°</em></div><div class="hst-l">Solutions</div></div>
+    </div>
+  </div>
+
+  <!-- RIGHT — dark with emblem -->
+  <div class="hero-right">
+    <div class="hero-right-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-arch">
+      <svg viewBox="0 0 600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="300" y1="900" x2="300" y2="60" stroke="#2563EB" stroke-width="0.4"/>
+        <line x1="180" y1="900" x2="180" y2="180" stroke="#2563EB" stroke-width="0.3"/>
+        <line x1="420" y1="900" x2="420" y2="180" stroke="#2563EB" stroke-width="0.3"/>
+        <line x1="80" y1="900" x2="80" y2="340" stroke="#2563EB" stroke-width="0.2"/>
+        <line x1="520" y1="900" x2="520" y2="340" stroke="#2563EB" stroke-width="0.2"/>
+        <line x1="0" y1="720" x2="600" y2="720" stroke="#2563EB" stroke-width="0.3" opacity="0.4"/>
+        <line x1="0" y1="560" x2="600" y2="560" stroke="#2563EB" stroke-width="0.2" opacity="0.3"/>
+        <line x1="0" y1="900" x2="600" y2="60" stroke="#0EA5E9" stroke-width="0.2" opacity="0.1"/>
+        <line x1="600" y1="900" x2="0" y2="60" stroke="#0EA5E9" stroke-width="0.2" opacity="0.1"/>
+        <g opacity="0.45">
+          <rect x="222" y="220" width="13" height="17" stroke="#0EA5E9" stroke-width="0.5"/>
+          <rect x="248" y="220" width="13" height="17" stroke="#0EA5E9" stroke-width="0.5"/>
+          <rect x="274" y="220" width="13" height="17" stroke="#0EA5E9" stroke-width="0.5"/>
+          <rect x="300" y="220" width="13" height="17" stroke="#0EA5E9" stroke-width="0.5"/>
+          <rect x="326" y="220" width="13" height="17" stroke="#0EA5E9" stroke-width="0.5"/>
+          <rect x="352" y="220" width="13" height="17" stroke="#0EA5E9" stroke-width="0.5"/>
+          <rect x="222" y="252" width="13" height="17" stroke="#0EA5E9" stroke-width="0.5"/>
+          <rect x="248" y="252" width="13" height="17" stroke="#0EA5E9" stroke-width="0.5"/>
+          <rect x="274" y="252" width="13" height="17" stroke="#0EA5E9" stroke-width="0.5"/>
+          <rect x="300" y="252" width="13" height="17" stroke="#0EA5E9" stroke-width="0.5"/>
+          <rect x="326" y="252" width="13" height="17" stroke="#0EA5E9" stroke-width="0.5"/>
+          <rect x="352" y="252" width="13" height="17" stroke="#0EA5E9" stroke-width="0.5"/>
+          <rect x="222" y="284" width="13" height="17" stroke="#0EA5E9" stroke-width="0.5"/>
+          <rect x="248" y="284" width="13" height="17" stroke="#0EA5E9" stroke-width="0.5"/>
+          <rect x="274" y="284" width="13" height="17" stroke="#0EA5E9" stroke-width="0.5"/>
+          <rect x="300" y="284" width="13" height="17" stroke="#0EA5E9" stroke-width="0.5"/>
+          <rect x="326" y="284" width="13" height="17" stroke="#0EA5E9" stroke-width="0.5"/>
+          <rect x="352" y="284" width="13" height="17" stroke="#0EA5E9" stroke-width="0.5"/>
+        </g>
+      </svg>
+    </div>
+    <!-- Corner labels -->
+    <div class="h-corner h-tl">Real Estate</div>
+    <div class="h-corner h-tr">Since 2014</div>
+    <div class="h-corner h-bl">Karachi · Pakistan</div>
+    <div class="h-corner h-br">360° Solutions</div>
+    <!-- EMBLEM — large and proud -->
+    <div class="hero-emblem-display">
+      <div class="emblem-ring">
+        <div class="emblem-circle">
+          <img src="emblem.png" alt="AYRA Consultants"/>
+        </div>
+      </div>
+      <div class="emblem-label">Real Estate · Media · Consulting</div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll to explore</span>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Lease Management <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Asset Management <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Digital Media <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Brand Strategy <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">OOH Advertising <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">PR & Events <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">360° Solutions <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Pan-Pakistan <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Overseas Clients <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Since 2014 <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Lease Management <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Asset Management <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Digital Media <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Brand Strategy <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">OOH Advertising <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">PR & Events <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">360° Solutions <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Pan-Pakistan <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Overseas Clients <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Since 2014 <span class="ticker-sep">✦</span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about section" id="about">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="about-vis">
+        <div class="about-bg"></div>
+        <div class="about-svg">
+          <svg viewBox="0 0 400 400" fill="none">
+            <polygon points="200,20 380,380 20,380" stroke="#1A4ED8" stroke-width="1.5"/>
+            <polygon points="200,80 340,380 60,380" stroke="#1A4ED8" stroke-width="0.8" opacity="0.5"/>
+            <polygon points="200,140 300,380 100,380" stroke="#0EA5E9" stroke-width="0.6" opacity="0.35"/>
+            <line x1="200" y1="20" x2="200" y2="380" stroke="#1A4ED8" stroke-width="0.6" opacity="0.4"/>
+            <line x1="20" y1="380" x2="380" y2="380" stroke="#1A4ED8" stroke-width="1.5" opacity="0.6"/>
+          </svg>
+        </div>
+        <!-- Emblem — natural colors on white/light bg -->
+        <div class="about-emblem-float">
+          <img src="emblem.png" alt="AYRA Emblem"/>
+        </div>
+        <div class="about-accent">
+          <div class="about-yr">2014</div>
+          <div class="about-yr-l">Est. Karachi</div>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">Our Story</div>
+        <h2 class="sec-h">Built on <em>Integrity.</em><br>Driven by Results.</h2>
+        <div class="gold-rule"></div>
+        <p class="about-quote">"Great problem solving requires re-imagining what's possible — the ingenuity to see connections invisible to others."</p>
+        <p class="about-body">Since 2014, AYRA Consultants has been developing tailored business strategies and 360° solutions for local and international clients. We bring together real estate expertise, digital media mastery, branding power and PR — all under one roof, focused entirely on your growth.<br><br>Today we proudly serve Pakistan's largest corporates and overseas investors with the same standard of excellence, integrity, and measurable results.</p>
+        <div class="about-vals">
+          <div class="aval"><span class="aval-dot"></span>Integrity First</div>
+          <div class="aval"><span class="aval-dot"></span>ROI Focused</div>
+          <div class="aval"><span class="aval-dot"></span>Global Reach</div>
+          <div class="aval"><span class="aval-dot"></span>Data Driven</div>
+          <div class="aval"><span class="aval-dot"></span>Client Centric</div>
+          <div class="aval"><span class="aval-dot"></span>360° Solutions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services section" id="services">
+  <div class="inner">
+    <div class="svc-header">
+      <div>
+        <div class="eyebrow">What We Do</div>
+        <h2 class="sec-h">One Partner.<br><em>Every Solution.</em></h2>
+      </div>
+      <p class="sec-p">From real estate fundamentals to cutting-edge digital — every service designed to maximise your returns and amplify your presence.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="scard"><div class="scard-num">01</div><div class="scard-icon">🏢</div><div class="scard-title">Lease & Retail Management</div><p class="scard-desc">Geo-location feasibility, demographic analysis, lease negotiations, MOUs, renewals and ethical terminations — handled with legal precision.</p><div class="scard-arrow">↗</div></div>
+      <div class="scard"><div class="scard-num">02</div><div class="scard-icon">📈</div><div class="scard-title">Asset Management</div><p class="scard-desc">Strategic asset planning, ROI optimisation, and full portfolio management for residential and commercial real estate across Pakistan.</p><div class="scard-arrow">↗</div></div>
+      <div class="scard"><div class="scard-num">03</div><div class="scard-icon">📱</div><div class="scard-title">Digital Media Management</div><p class="scard-desc">Social media campaigns, SEO, SEM, PPC, lead generation — your brand dominating every digital channel that matters.</p><div class="scard-arrow">↗</div></div>
+      <div class="scard"><div class="scard-num">04</div><div class="scard-icon">📡</div><div class="scard-title">Branding & Advertising</div><p class="scard-desc">Billboard OOH across KHI/LHR/ISL, TVC on GEO/ARY/HUM, print media buying, SMS broadcast on all major networks.</p><div class="scard-arrow">↗</div></div>
+      <div class="scard"><div class="scard-num">05</div><div class="scard-icon">✏️</div><div class="scard-title">Design & Development</div><p class="scard-desc">Website development, graphic design, social media content, DVC & TVC production in 4K — design that communicates true value.</p><div class="scard-arrow">↗</div></div>
+      <div class="scard"><div class="scard-num">06</div><div class="scard-icon">🎪</div><div class="scard-title">PR & Event Management</div><p class="scard-desc">Influencer engagement, PR planning, exclusive corporate events and activations — building your reputation at every touchpoint.</p><div class="scard-arrow">↗</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<div class="numbers">
+  <div class="nstat"><div class="nstat-n">10<em>+</em></div><div class="nstat-l">Years of Excellence</div></div>
+  <div class="nstat"><div class="nstat-n">200<em>+</em></div><div class="nstat-l">Clients Served</div></div>
+  <div class="nstat"><div class="nstat-n">4</div><div class="nstat-l">Cities Pan-Pakistan</div></div>
+  <div class="nstat"><div class="nstat-n">360<em>°</em></div><div class="nstat-l">Business Solutions</div></div>
+</div>
+
+<!-- CLIENTS -->
+<section class="clients section" id="clients">
+  <div class="inner">
+    <div class="clients-head">
+      <div><div class="eyebrow">Our Portfolio</div><h2 class="sec-h">Judge Us By The<br><em>Clients</em> We Serve</h2></div>
+      <p class="sec-p">From Pakistan's most iconic brands to government institutions — our track record speaks for itself.</p>
+    </div>
+    <div class="cgrid">
+      <div class="ccard"><div class="ccard-n">Diner's</div></div>
+      <div class="ccard"><div class="ccard-n">Lucky One</div></div>
+      <div class="ccard"><div class="ccard-n">Bahria Town</div></div>
+      <div class="ccard"><div class="ccard-n">Lifeline Hospital</div></div>
+      <div class="ccard"><div class="ccard-n">Zeen</div></div>
+      <div class="ccard"><div class="ccard-n">Junaid Jamshed</div></div>
+      <div class="ccard"><div class="ccard-n">Make-up City</div></div>
+      <div class="ccard"><div class="ccard-n">Levi's</div></div>
+      <div class="ccard"><div class="ccard-n">Ideas by Gul Ahmed</div></div>
+      <div class="ccard"><div class="ccard-n">Salitex</div></div>
+      <div class="ccard"><div class="ccard-n">Crown Mall</div></div>
+      <div class="ccard"><div class="ccard-n">Civil Aviation Authority</div></div>
+      <div class="ccard"><div class="ccard-n">Khas</div></div>
+      <div class="ccard"><div class="ccard-n">Nishat Linen</div></div>
+      <div class="ccard"><div class="ccard-n">Lätt Liv</div></div>
+      <div class="ccard"><div class="ccard-n">& Many More</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi section" id="testimonials">
+  <div class="inner">
+    <div class="eyebrow">Client Words</div>
+    <h2 class="sec-h">What Our <em>Clients</em> Say</h2>
+    <div class="tgrid">
+      <div class="tcard"><span class="tcard-q">"</span><p class="tcard-t">They are honest, they take care of all your needs quickly — they are reliable and you can absolutely count on them.</p><div class="tcard-div"></div><div class="tcard-a">Mr. Muzammil Moten</div><div class="tcard-r">Director Marketing — Diner's</div></div>
+      <div class="tcard"><span class="tcard-q">"</span><p class="tcard-t">It has been a pleasure working with Team AC. I appreciate the dedication to the core and would wholeheartedly recommend their services.</p><div class="tcard-div"></div><div class="tcard-a">Mrs. Naz Mansha</div><div class="tcard-r">Owner Chairperson — Nishat Textiles</div></div>
+      <div class="tcard"><span class="tcard-q">"</span><p class="tcard-t">Working with the team has been a most pleasant experience — their dedication and passion is exemplified by unrivalled customer support.</p><div class="tcard-div"></div><div class="tcard-a">Mr. Yasin</div><div class="tcard-r">Country Head — Junaid Jamshed</div></div>
+      <div class="tcard"><span class="tcard-q">"</span><p class="tcard-t">They handle things efficiently, are always available, and keep us updated with monthly reports so we always know how our work is doing.</p><div class="tcard-div"></div><div class="tcard-a">Mr. Zareen Gul</div><div class="tcard-r">Secretary Lands & Clubs — Civil Aviation Authority</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team section" id="team">
+  <div class="inner">
+    <div class="eyebrow">Leadership</div>
+    <h2 class="sec-h">Meet The <em>Team</em></h2>
+    <p class="sec-p">Customer-service centric leaders focused on sustainable profit growth for every client.</p>
+    <div class="tgrid2">
+      <div class="tmcard"><div class="tmcard-top"><div class="tmcard-mono">RR</div><div class="tmcard-bar"></div></div><div class="tmcard-body"><div class="tmcard-name">Rabbiya Rehan</div><div class="tmcard-role">Chief Executive Officer</div></div></div>
+      <div class="tmcard"><div class="tmcard-top"><div class="tmcard-mono">IR</div><div class="tmcard-bar"></div></div><div class="tmcard-body"><div class="tmcard-name">Ikram-ul-Haq Rehan</div><div class="tmcard-role">Finance</div></div></div>
+      <div class="tmcard"><div class="tmcard-top"><div class="tmcard-mono">SZ</div><div class="tmcard-bar"></div></div><div class="tmcard-body"><div class="tmcard-name">Sobia Zafar</div><div class="tmcard-role">Operations</div></div></div>
+      <div class="tmcard"><div class="tmcard-top"><div class="tmcard-mono">AB</div><div class="tmcard-bar"></div></div><div class="tmcard-body"><div class="tmcard-name">Abu Bakar</div><div class="tmcard-role">Digital Media</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY AYRA -->
+<section class="why section" id="why">
+  <div class="inner">
+    <div class="why-grid">
+      <div>
+        <div class="eyebrow">Why Choose Us</div>
+        <h2 class="sec-h">Why <em>AYRA</em><br>Stands Apart</h2>
+        <p class="sec-p">A decade of trust, a portfolio that proves it, and a team that treats your business like their own.</p>
+      </div>
+      <div class="why-feats">
+        <div class="wf"><span class="wf-icon">🏆</span><div class="wf-title">10+ Years Trusted</div><div class="wf-desc">A proven track record since 2014 with Pakistan's most respected brands and institutions</div></div>
+        <div class="wf"><span class="wf-icon">🌍</span><div class="wf-title">Overseas Reach</div><div class="wf-desc">Actively serving diaspora clients managing real estate assets back in Pakistan</div></div>
+        <div class="wf"><span class="wf-icon">🔬</span><div class="wf-title">Data-Backed Strategy</div><div class="wf-desc">Every recommendation backed by feasibility reports and deep demographic analysis</div></div>
+        <div class="wf"><span class="wf-icon">⚡</span><div class="wf-title">360° Under One Roof</div><div class="wf-desc">From lease to digital to PR — one trusted partner for your entire business journey</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact section" id="contact">
+  <div class="inner">
+    <div class="eyebrow">Get In Touch</div>
+    <h2 class="sec-h">Let's Build <em>Something</em><br>Extraordinary</h2>
+    <div class="contact-grid">
+      <div class="ci">
+        <div class="ci-item"><div class="ci-icon">📍</div><div><div class="ci-label">Office</div><div class="ci-val">49-C Lane 5, Kh-e-Bukhari Phase 6<br>DHA, Karachi, Pakistan</div></div></div>
+        <div class="ci-item"><div class="ci-icon">📞</div><div><div class="ci-label">Phone</div><div class="ci-val">+92-321-2421104<br>+92-321-2159514</div></div></div>
+        <div class="ci-item"><div class="ci-icon">✉️</div><div><div class="ci-label">Email</div><div class="ci-val">info@ayraconsultants.com<br>ayraconsultants@gmail.com</div></div></div>
+        <div class="ci-item"><div class="ci-icon">🌐</div><div><div class="ci-label">Social</div><div class="ci-val">@ayraconsultants</div></div></div>
+      </div>
+      <div class="cform">
+        <div class="cform-h">Send a Message</div>
+        <div class="cform-s">We respond within 24 hours</div>
+        <div class="fg"><label>Your Name</label><input type="text" placeholder="Full name"/></div>
+        <div class="fg"><label>Email Address</label><input type="email" placeholder="your@email.com"/></div>
+        <div class="fg"><label>Service Interest</label>
+          <select>
+            <option value="">Select a service</option>
+            <option>Lease & Retail Management</option>
+            <option>Asset Management</option>
+            <option>Digital Media Management</option>
+            <option>Branding & Advertising</option>
+            <option>Design & Development</option>
+            <option>PR & Event Management</option>
+          </select>
+        </div>
+        <div class="fg"><label>Message</label><textarea placeholder="Tell us about your requirement..."></textarea></div>
+        <button class="fsub" onclick="handleSubmit()">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">
+        <img src="emblem.png" alt="AYRA"/>
+        <div class="footer-logo-text">
+          <span class="fn">AYRA</span>
+          <span class="fs">Consultants</span>
+        </div>
+      </div>
+      <p class="footer-tag">Pakistan's most trusted real estate and consulting partner — 360° solutions and a presence that travels with you, pan-Pakistan and beyond.</p>
+      <div class="footer-soc">
+        <a href="#" class="fsoc">in</a>
+        <a href="#" class="fsoc">fb</a>
+        <a href="#" class="fsoc">ig</a>
+        <a href="#" class="fsoc">yt</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Services</h4><ul>
+      <li><a href="#services">Lease Management</a></li>
+      <li><a href="#services">Asset Management</a></li>
+      <li><a href="#services">Digital Media</a></li>
+      <li><a href="#services">Branding & Ads</a></li>
+      <li><a href="#services">PR & Events</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Company</h4><ul>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#team">Our Team</a></li>
+      <li><a href="#clients">Clients</a></li>
+      <li><a href="#why">Why AYRA</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul>
+      <li><a href="tel:+923212421104">+92-321-2421104</a></li>
+      <li><a href="mailto:info@ayraconsultants.com">info@ayraconsultants.com</a></li>
+      <li><a href="#contact">DHA Phase 6, Karachi</a></li>
+      <li><a href="#">@ayraconsultants</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 AYRA Consultants. All rights reserved.</span>
+    <span class="footer-ntn">NTN: 59051485</span>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60)
+})
+document.getElementById('ham').addEventListener('click',()=>{
+  document.getElementById('mob').classList.toggle('open')
+})
+function closeMob(){document.getElementById('mob').classList.remove('open')}
+function handleSubmit(){alert('Thank you! The AYRA Consultants team will be in touch within 24 hours.')}
+const io=new IntersectionObserver((e)=>{
+  e.forEach(x=>{
+    if(x.isIntersecting){
+      x.target.style.opacity='1';x.target.style.transform='translateY(0)';io.unobserve(x.target)
+    }
+  })
+},{threshold:0.08})
+document.querySelectorAll('.scard,.tcard,.tmcard,.ccard,.aval,.wf,.nstat').forEach(el=>{
+  el.style.opacity='0';el.style.transform='translateY(22px)';
+  el.style.transition='opacity 0.65s ease,transform 0.65s ease';
+  io.observe(el)
+})
+</script>
+</body>
+</html>
