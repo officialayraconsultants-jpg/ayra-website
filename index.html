@@ -225,14 +225,16 @@ nav.scrolled{background:rgba(246,245,243,0.98);box-shadow:0 2px 24px rgba(0,0,0,
 /* Inner — transparent, just the emblem */
 .emblem-inner{
   width:160px;height:160px;border-radius:50%;
-  background:transparent; /* NO white background */
-  border:none; /* NO border box */
+  background:transparent;
+  border:none;
   display:flex;align-items:center;justify-content:center;
   animation:rotateSlow 25s linear infinite reverse;
+  overflow:hidden;
 }
 .emblem-inner img{
   width:110px;height:110px;object-fit:contain;
-  filter:brightness(0) invert(1); /* White on dark panel */
+  filter:brightness(0) invert(1);
+  mix-blend-mode:screen; /* Removes white box completely */
 }
 .emblem-label{
   font-family:var(--head);font-size:9px;letter-spacing:5px;
