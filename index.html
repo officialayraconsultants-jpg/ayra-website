@@ -16,9 +16,9 @@
 --muted:#6A6A6A;--muted2:#9A9A9A;
 --border:rgba(0,0,0,0.07);--border2:rgba(0,0,0,0.13);
 --blue:#1D4ED8;--blue2:#3B82F6;--cyan:#06B6D4;
---head:'DM Telegraf',sans-serif;
---serif:'DM Telegraf Display',Georgia,serif;
---body:'Garet',sans-serif;
+--head:'DM Sans',sans-serif;
+--serif:'DM Serif Display',Georgia,serif;
+--body:'Inter',sans-serif;
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--body);background:var(--bg);color:var(--dark);overflow-x:hidden}
@@ -31,20 +31,20 @@ a{text-decoration:none;color:inherit}
 nav{position:fixed;top:0;left:0;right:0;z-index:500;height:76px;padding:0 60px;display:flex;align-items:center;justify-content:space-between;transition:all 0.4s}
 nav.light-nav{background:rgba(255,255,255,0.96);border-bottom:1px solid var(--border);box-shadow:0 2px 24px rgba(0,0,0,0.06)}
 nav.dark-nav{background:rgba(20,20,20,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.05)}
-.nav-logo{display:flex;align-items:center;gap:8px;cursor:pointer}
-.nav-emblem img{width:52px;height:52px;object-fit:contain}
+.nav-logo{display:flex;align-items:center;gap:14px;cursor:pointer}
+.nav-emblem img{width:36px;height:36px;object-fit:contain}
 nav.light-nav .nav-emblem img{mix-blend-mode:multiply}
 nav.dark-nav .nav-emblem img{filter:brightness(0) invert(1)}
 .nav-sep{width:1px;height:24px;background:var(--border2)}
 nav.dark-nav .nav-sep{background:rgba(255,255,255,0.12)}
-.nav-text .b{font-family:var(--head);font-size:32px;font-weight:600;letter-spacing:8px;line-height:1;display:block}
+.nav-text .b{font-family:var(--head);font-size:15px;font-weight:700;letter-spacing:5px;line-height:1;display:block}
 nav.light-nav .nav-text .b{color:var(--dark)}
 nav.dark-nav .nav-text .b{color:#fff}
-.nav-text .s{font-size:14px;font-weight:400;color:var(--blue2);letter-spacing:1px;text-transform:uppercase;margin-top:1px;display:block}
+.nav-text .s{font-size:7px;font-weight:500;color:var(--blue2);letter-spacing:4px;text-transform:uppercase;margin-top:3px;display:block}
 .nav-links{display:flex;gap:32px;list-style:none;align-items:center}
 .nav-links a{font-family:var(--head);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;transition:color 0.3s;position:relative}
 nav.light-nav .nav-links a{color:var(--muted)}
-nav.dark-nav .nav-links a{color:rgba(255,255,255,0.85)}
+nav.dark-nav .nav-links a{color:rgba(255,255,255,0.5)}
 .nav-links a:hover{color:var(--blue2)!important}
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--blue2);transition:width 0.3s}
 .nav-links a:hover::after{width:100%}
@@ -55,7 +55,7 @@ nav.dark-nav .nav-links a{color:rgba(255,255,255,0.85)}
 .dd a{display:block;padding:12px 20px;font-family:var(--head);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);transition:all 0.2s}
 .dd a:last-child{border-bottom:none}
 .dd a:hover{color:var(--blue);background:var(--bg3);padding-left:28px}
-.nav-btn{font-family:var(--head);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#fff;background:var(--dark2);padding:11px 12px;font-weight:600;transition:all 0.3s;cursor:pointer;border:none}
+.nav-btn{font-family:var(--head);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#fff;background:var(--dark2);padding:11px 26px;font-weight:600;transition:all 0.3s;cursor:pointer;border:none}
 .nav-btn:hover{background:var(--blue)}
 .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
 .ham span{width:22px;height:1.5px;display:block;transition:all 0.3s}
@@ -70,12 +70,12 @@ nav.dark-nav .ham span{background:#fff}
 .hero-bg video{width:100%;height:100%;object-fit:cover}
 .hero-bg img{width:100%;height:100%;object-fit:cover}
 .hero-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.78) 40%,rgba(0,0,0,0.35));z-index:1}
-.hero-body{position:relative;z-index:2;padding:0 60px;max-width:820px;margin-top:0px}
+.hero-body{position:relative;z-index:2;padding:0 60px;max-width:820px;margin-top:-60px}
 .hero-tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--head);font-size:9px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:28px;font-weight:600}
 .hero-tag::before{content:'';width:28px;height:1px;background:var(--blue2)}
 .hero-h{font-family:var(--serif);font-size:clamp(50px,7vw,96px);font-weight:400;line-height:0.95;letter-spacing:-1.5px;color:#fff;margin-bottom:28px}
-.hero-h em{font-style:normal;color:var(--blue2)}
-.hero-p{font-size:17px;color:rgba(255,255,255,0.85);line-height:1.85;max-width:500px;margin-bottom:44px;font-weight:300}
+.hero-h em{font-style:italic;color:var(--blue2)}
+.hero-p{font-size:17px;color:rgba(255,255,255,0.6);line-height:1.85;max-width:500px;margin-bottom:44px;font-weight:300}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
 .btn-w{font-family:var(--head);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--dark);background:#fff;padding:15px 36px;font-weight:700;transition:all 0.35s;cursor:pointer;border:none}
 .btn-w:hover{background:var(--blue2);color:#fff}
@@ -83,7 +83,7 @@ nav.dark-nav .ham span{background:#fff}
 .btn-gw:hover{border-color:#fff;background:rgba(255,255,255,0.08)}
 /* Stats bar */
 .hero-stats{position:absolute;bottom:0;left:0;right:0;z-index:2;background:rgba(0,0,0,0.55);backdrop-filter:blur(12px);display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,0.07)}
-.hs{padding:5px 32px;border-right:1px solid rgba(255,255,255,0.07);text-align:center}
+.hs{padding:22px 32px;border-right:1px solid rgba(255,255,255,0.07);text-align:center}
 .hs:last-child{border-right:none}
 .hs-n{font-family:var(--serif);font-size:34px;font-weight:400;color:#fff;letter-spacing:-1px;line-height:1}
 .hs-n em{font-style:normal;color:var(--blue2)}
@@ -371,13 +371,13 @@ footer{padding:56px 20px 24px}
 <!-- ══════ HOME ══════ -->
 <div id="p-home" class="page active">
 <section class="hero">
-<div class="hero-bg"><img src="img-city.jpg" alt="AYRA Consultants — Karachi skyline"/></div>
+<div class="hero-bg"><video autoplay muted loop playsinline poster="img-city.jpg"><source src="hero-video.mp4" type="video/mp4"/></video></div>
 <div class="hero-ov"></div>
 <div class="hero-body">
 <div class="hero-tag">Indeed This Is Our Provision; For It There Is No Depletion. (39:52)</div>
-<div class="hero-tag">Pakistan's Premier Consultancy · Est. 2014</div>
-<h1 class="hero-h"><em>ELEVATE</em><br>YOUR ASSETS.<br>AMPLIFY YOUR BRAND.</h1>
+<h1 class="hero-h"><em>Elevate</em><br>Your Assets.<br>Amplify Your Brand.</h1>
 <p class="hero-p">360° real estate and business solutions — from lease management to digital campaigns. Pan-Pakistan operations, global reach for overseas clients.</p>
+<div class="hero-tag">Pakistan's Premier Consultancy · Est. 2014</div>
 <div class="hero-btns">
 <button class="btn-w" onclick="go('services')">Explore Services</button>
 <button class="btn-gw" onclick="go('contact')">Get In Touch</button>
