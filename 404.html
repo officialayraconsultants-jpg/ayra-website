@@ -199,10 +199,12 @@ nav.dark-nav .ham span{background:#fff}
 .tc-r{font-size:11px;color:var(--muted);margin-top:4px}
 /* TEAM */
 .team-sec{background:var(--panel)}
-.tmg{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:64px;background:rgba(255,255,255,0.05)}
+.tmg{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;margin-top:64px;background:rgba(255,255,255,0.05)}
 .tm{background:var(--panel);overflow:hidden;transition:all 0.4s}
 .tm:hover{background:var(--panel2)}
 .tm-top{height:200px;background:var(--panel2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.tm-top img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(15%);transition:filter 0.4s}
+.tm:hover .tm-top img{filter:grayscale(0%)}
 .tm-mono{font-family:var(--serif);font-size:60px;font-weight:400;color:rgba(255,255,255,0.04)}
 .tm-bar{position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--cyan));transform:scaleX(0);transform-origin:left;transition:transform 0.4s}
 .tm:hover .tm-bar{transform:scaleX(1)}
@@ -539,10 +541,13 @@ footer{padding:56px 20px 24px}
 <h2 class="sh lt">Meet The <em>Team</em></h2>
 <p class="sp lt">Customer-service centric leaders focused on sustainable profit growth for every client.</p>
 <div class="tmg">
-<div class="tm"><div class="tm-top"><div class="tm-mono">RR</div><div class="tm-bar"></div></div><div class="tm-body"><div class="tm-name">Rabbiya Rehan</div><div class="tm-role">Chief Executive Officer</div></div></div>
-<div class="tm"><div class="tm-top"><div class="tm-mono">IR</div><div class="tm-bar"></div></div><div class="tm-body"><div class="tm-name">Ikram-ul-Haq Rehan</div><div class="tm-role">Finance Director</div></div></div>
-<div class="tm"><div class="tm-top"><div class="tm-mono">SZ</div><div class="tm-bar"></div></div><div class="tm-body"><div class="tm-name">Sobia Zafar</div><div class="tm-role">Head of Operations</div></div></div>
-<div class="tm"><div class="tm-top"><div class="tm-mono">AB</div><div class="tm-bar"></div></div><div class="tm-body"><div class="tm-name">Abu Bakar</div><div class="tm-role">Digital Media Lead</div></div></div>
+<div class="tm"><div class="tm-top"><img src="team-rabbiya-rehan.jpg" alt="Rabbiya Rehan — Chief Executive Officer"/><div class="tm-bar"></div></div><div class="tm-body"><div class="tm-name">Rabbiya Rehan</div><div class="tm-role">Chief Executive Officer</div></div></div>
+<div class="tm"><div class="tm-top"><img src="team-ikram-rehan.jpg" alt="Ikram-ul-Haq Rehan — Operations Head"/><div class="tm-bar"></div></div><div class="tm-body"><div class="tm-name">Ikram-ul-Haq Rehan</div><div class="tm-role">Operations Head</div></div></div>
+<div class="tm"><div class="tm-top"><img src="team-rehan-ateeq.jpg" alt="Rehan Ateeq — Financial Advisor"/><div class="tm-bar"></div></div><div class="tm-body"><div class="tm-name">Rehan Ateeq</div><div class="tm-role">Financial Advisor</div></div></div>
+<div class="tm"><div class="tm-top"><img src="team-zubair-elahi.jpg" alt="Zubair Elahi — Head of IT & AI Specialist"/><div class="tm-bar"></div></div><div class="tm-body"><div class="tm-name">Zubair Elahi</div><div class="tm-role">Head of IT & AI Specialist</div></div></div>
+<div class="tm"><div class="tm-top"><img src="team-kanwal-aftab.jpg" alt="Kanwal Aftab — Legal Advisor"/><div class="tm-bar"></div></div><div class="tm-body"><div class="tm-name">Kanwal Aftab</div><div class="tm-role">Legal Advisor</div></div></div>
+<div class="tm"><div class="tm-top"><img src="team-kulsoom-khan.jpg" alt="Kulsoom Khan — Communication Specialist"/><div class="tm-bar"></div></div><div class="tm-body"><div class="tm-name">Kulsoom Khan</div><div class="tm-role">Communication Specialist</div></div></div>
+</div>
 </div>
 </div>
 </section>
