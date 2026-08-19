@@ -26,7 +26,7 @@ body{font-family:var(--body);background:var(--bg);color:var(--dark);overflow-x:h
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--blue);border-radius:2px}
 img{max-width:100%;display:block}
-a{text-decoration:none;color:inherit}
+a{text-decoration:none;:inherit}
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:500;height:76px;padding:0 60px;display:flex;align-items:center;justify-content:space-between;transition:all 0.4s}
 nav.light-nav{background:rgba(255,255,255,0.96);border-bottom:1px solid var(--border);box-shadow:0 2px 24px rgba(0,0,0,0.06)}
@@ -38,12 +38,12 @@ nav.dark-nav .nav-emblem img{filter:brightness(0) invert(1)}
 .nav-sep{width:1px;height:24px;background:var(--border2)}
 nav.dark-nav .nav-sep{background:rgba(255,255,255,0.12)}
 .nav-text .b{font-family:var(--head);font-size:15px;font-weight:700;letter-spacing:5px;line-height:1;display:block}
-nav.light-nav .nav-text .b{color:var(--dark)}
-nav.dark-nav .nav-text .b{color:#fff}
-.nav-text .s{font-size:7px;font-weight:500;color:var(--blue2);letter-spacing:4px;text-transform:uppercase;margin-top:3px;display:block}
+nav.light-nav .nav-text .b{:var(--dark)}
+nav.dark-nav .nav-text .b{:#fff}
+.nav-text .s{font-size:7px;font-weight:500;:var(--blue2);letter-spacing:4px;text-transform:uppercase;margin-top:3px;display:block}
 .nav-links{display:flex;gap:32px;list-style:none;align-items:center}
-.nav-links a{font-family:var(--head);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;transition:color 0.3s;position:relative}
-nav.light-nav .nav-links a{color:var(--muted)}
+.nav-links a{font-family:var(--head);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;transition: 0.3s;position:relative}
+nav.light-nav .nav-links a{:var(--muted)}
 nav.dark-nav .nav-links a{color:rgba(255,255,255,0.5)}
 .nav-links a:hover{color:var(--blue2)!important}
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--blue2);transition:width 0.3s}
@@ -75,7 +75,7 @@ nav.dark-nav .ham span{background:#fff}
 .hero-tag::before{content:'';width:28px;height:1px;background:var(--blue2)}
 .hero-h{font-family:var(--serif);font-size:clamp(50px,7vw,96px);font-weight:200;line-height:0.95;letter-spacing:-1.5px;color:#fff;margin-bottom:28px}
 .hero-h em{font-style:italic;color:var(--blue2)}
-.hero-p{font-size:17px;color:rgba(255,255,255,0.6);line-height:1.85;max-width:500px;margin-bottom:15px;font-weight:300}
+.hero-p{font-size:12px;color:#cdcdcd;line-height:1.85;max-width:500px;margin-bottom:15px;font-weight:300}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
 .btn-w{font-family:var(--head);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--dark);background:#fff;padding:15px 36px;font-weight:700;transition:all 0.35s;cursor:pointer;border:none}
 .btn-w:hover{background:var(--blue2);color:#fff}
@@ -96,12 +96,13 @@ nav.dark-nav .ham span{background:#fff}
 @keyframes sc{0%{top:-100%}100%{top:100%}}
 /* QURANIC VERSE */
 .hero-verse{margin-top:15px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.12);max-width:480px}
-.hv-en{font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:8px}
+.hv-en{font-family:system-ui;font-size:12px;font-style:normal;color:rgb(247 247 247 / 77%
+77%);line-height:1.75;margin-bottom:5px}
 .hv-cite{font-family:var(--head);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--blue2);font-weight:600}
 /* TICKER */
 .ticker{background:var(--panel);padding:12px 0;overflow:hidden;border-bottom:1px solid rgba(255,255,255,0.04)}
 .ticker-inner{display:inline-flex;animation:tick 35s linear infinite;white-space:nowrap}
-.ti{display:inline-flex;align-items:center;gap:14px;padding:0 36px;font-family:var(--head);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.28)}
+.ti{display:inline-flex;align-items:center;gap:14px;padding:0 36px;font-family:var(--head);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#cdcdcd}
 .td{color:var(--blue2)}
 @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 /* SECTIONS */
@@ -391,13 +392,13 @@ footer{padding:56px 20px 24px}
 <div class="hero-body">
 <div class="hero-tag">Pakistan's Premier Consultancy · Est. 2014</div>
 <h1 class="hero-h"><em>Elevate</em>Your Assets.<br>Amplify Your Brand.</h1>
-<p class="hero-p">360° real estate and business solutions — from lease management to digital campaigns. Pan-Pakistan operations, global reach for overseas clients.</p>
-<div class="hero-verse">
-<div class="hv-en">"Indeed, this is Our provision; for it there is no depletion."38:54</div>
-</div>
+<p class="hero-p">360° Marketing and Business solutions — from lease management to digital campaigns. Pan-Pakistan operations, global reach for overseas clients.</p>
 <div class="hero-btns">
 <button class="btn-w" onclick="go('services')">Explore Services</button>
 <button class="btn-gw" onclick="go('contact')">Get In Touch</button>
+<div class="hero-verse">
+<div class="hv-en">"Indeed, This is Our Provision; for it There is no Depletion." 38:54</div>
+</div>
 </div>
 </div>
 <div class="hero-sc"><span>Scroll</span><div class="hero-sc-line"></div></div>
@@ -435,7 +436,7 @@ footer{padding:56px 20px 24px}
 <div class="inner">
 <div class="svc-head">
 <div><div class="ew lt">What We Do</div><h2 class="sh lt">One Partner.<br><em>Every Solution.</em></h2></div>
-<p class="sp lt">From real estate fundamentals to cutting-edge digital — every service designed to maximise your returns and amplify your presence.</p>
+<p class="sp lt">From Business fundamentals to cutting-edge digital — every service designed to maximise your returns and amplify your presence.</p>
 </div>
 <div class="svc-grid">
 <div class="sc" onclick="go('s-lease')"><div class="sc-img"><img src="img-city.jpg" alt="Lease"/></div><div class="sc-body"><div class="sc-n">01</div><div class="sc-t">Lease & Retail Management</div><p class="sc-d">Geo-location feasibility, demographic analysis, lease negotiations, MOUs, renewals and ethical terminations.</p><div class="sc-lnk">Learn More →</div></div></div>
