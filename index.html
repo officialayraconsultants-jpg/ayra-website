@@ -179,12 +179,19 @@ nav.dark-nav .ham span{background:#fff}
 .clients-sec{background:var(--bg2)}
 .cl-head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:60px}
 .cg{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
-.cc{background:var(--bg2);padding:28px 20px;min-height:88px;display:flex;align-items:center;justify-content:center;transition:all 0.35s;position:relative;overflow:hidden}
+.cc{background:var(--bg2);padding:28px 20px;min-height:88px;display:flex;align-items:center;justify-content:center;transition:all 0.35s;position:relative;overflow:hidden;cursor:pointer}
 .cc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transition:transform 0.35s}
 .cc:hover{background:var(--panel)}
 .cc:hover::before{transform:scaleX(1)}
 .cc-n{font-family:var(--head);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted2);text-align:center;transition:color 0.35s}
 .cc:hover .cc-n{color:rgba(255,255,255,0.55)}
+.cc-logo{max-width:100%;max-height:44px;width:auto;height:auto;object-fit:contain;filter:grayscale(1) opacity(0.65);transition:filter 0.35s}
+.cc:hover .cc-logo{filter:grayscale(0) opacity(1)}
+.ce-tag{display:inline-block;font-family:var(--head);font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);background:rgba(20,60,120,0.08);padding:6px 12px;border-radius:3px;margin:0 8px 8px 0}
+.ce-block{margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid rgba(0,0,0,0.08)}
+.ce-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.ce-result{background:var(--bg2);padding:16px 20px;border-radius:4px;margin-top:14px}
+.ce-result strong{color:var(--blue)}
 /* TESTIMONIALS */
 .testi{background:var(--bg)}
 .tg{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:64px}
@@ -685,10 +692,12 @@ footer{padding:56px 20px 24px}
 <section class="clients-sec section"><div class="inner">
 <div class="cl-head"><div><div class="ew">Client Portfolio</div><h2 class="sh">200+ Brands <em>Trust</em> AYRA</h2></div><p class="sp">From Pakistan's most iconic retail brands to government institutions — our client portfolio spans every major industry.</p></div>
 <div class="cg">
-<div class="cc"><div class="cc-n">Diner's</div></div><div class="cc"><div class="cc-n">Lucky One</div></div><div class="cc"><div class="cc-n">Bahria Town</div></div><div class="cc"><div class="cc-n">Lifeline Hospital</div></div>
+<div class="cc" onclick="go('c-diners')"><div class="cc-n">Diner's</div></div><div class="cc"><div class="cc-n">Lucky One</div></div><div class="cc"><div class="cc-n">Bahria Town</div></div><div class="cc"><div class="cc-n">Lifeline Hospital</div></div>
 <div class="cc"><div class="cc-n">Zeen</div></div><div class="cc"><div class="cc-n">Junaid Jamshed</div></div><div class="cc"><div class="cc-n">Make-up City</div></div><div class="cc"><div class="cc-n">Levi's</div></div>
 <div class="cc"><div class="cc-n">Ideas by Gul Ahmed</div></div><div class="cc"><div class="cc-n">Salitex</div></div><div class="cc"><div class="cc-n">Crown Mall</div></div><div class="cc"><div class="cc-n">Civil Aviation Authority</div></div>
 <div class="cc"><div class="cc-n">Khas</div></div><div class="cc"><div class="cc-n">Nishat Linen</div></div><div class="cc"><div class="cc-n">Lätt Liv</div></div><div class="cc"><div class="cc-n">Nestle Cerelac</div></div>
+<div class="cc"><div class="cc-n">McDonald's Pakistan</div></div>
+<div class="cc"><div class="cc-n">Clive</div></div>
 </div>
 </div></section>
 <section class="testi section"><div class="inner">
@@ -701,6 +710,33 @@ footer{padding:56px 20px 24px}
 </div>
 </div></section>
 </div></div>
+<!-- ══════ CLIENT: DINER'S (template — PLACEHOLDER content, replace with real data/logo/photos) ══════ -->
+<div id="p-c-diners" class="page"><div style="padding-top:76px">
+<div class="ph"><div class="ph-img"><img src="img-corporate.jpg" alt="Diner's"/></div><div class="ph-ov"></div><div class="ph-body"><div class="bc"><a onclick="go('home')">Home</a><span class="bc-s">/</span><a onclick="go('clients')">Clients</a><span class="bc-s">/</span>Diner's</div><div class="ew lt">Client Partner</div><h1>Diner's</h1></div></div>
+<section class="section" style="background:var(--bg2)"><div class="inner"><div class="sd-g">
+<div class="sd">
+<div class="ew">Overview</div><h2 class="sh">A Multi-Service <em>Partnership</em></h2><div class="rule"></div>
+<p>[PLACEHOLDER — replace with real overview: how long AYRA has worked with Diner's, scope of the relationship across service lines.]</p>
+
+<div class="ce-block">
+<span class="ce-tag">PR & Event Management</span>
+<h3>[PLACEHOLDER — Event/Campaign Name]</h3>
+<p>[PLACEHOLDER — the challenge/brief, what AYRA planned and executed.]</p>
+<div class="ce-result"><strong>Result:</strong> [PLACEHOLDER — real number/outcome, e.g. attendance, media reach, coverage]</div>
+</div>
+
+<div class="ce-block">
+<span class="ce-tag">Lease & Retail Management</span>
+<h3>[PLACEHOLDER — Outlet/Location Name]</h3>
+<p>[PLACEHOLDER — site identification, negotiation, and lease terms handled by AYRA for this retail outlet.]</p>
+<div class="ce-result"><strong>Result:</strong> [PLACEHOLDER — e.g. lease-up time, footfall, outlet count]</div>
+</div>
+
+</div>
+<div><div class="sb-card"><h4>Engagement Snapshot</h4><div class="sb-stat"><div class="sb-n">[X]</div><div class="sb-l">Outlets Leased</div></div><div class="sb-stat"><div class="sb-n">[X]</div><div class="sb-l">Events Delivered</div></div><div class="sb-stat"><div class="sb-n">[X]</div><div class="sb-l">Years Partnered</div></div></div>
+<div class="sb-card"><h4>Services Provided</h4><p>PR & Event Management · Lease & Retail Management</p></div>
+<div style="background:var(--blue);padding:28px;text-align:center"><div style="font-family:var(--head);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:12px">Considering AYRA?</div><button class="btn-w" onclick="go('contact')">Get In Touch →</button></div></div>
+</div></div></section></div></div>
 <!-- ══════ CONTACT ══════ -->
 <div id="p-contact" class="page"><div style="padding-top:76px">
 <div class="ph" style="height:45vh"><div class="ph-img"><img src="img-office.jpg" alt="Contact"/></div><div class="ph-ov"></div><div class="ph-body"><div class="bc"><a onclick="go('home')">Home</a><span class="bc-s">/</span>Contact</div><div class="ew lt">Get In Touch</div><h1>Let's Build <em>Something</em><br>Extraordinary</h1></div></div>
@@ -792,6 +828,7 @@ var PAGE_META={
 's-pr':{path:'/services/pr-event-management',title:'PR & Event Management — AYRA Consultants',desc:'Annual PR strategy, press relations, corporate events and activations — building and protecting your reputation nationwide.'},
 'properties':{path:'/properties',title:'Properties — AYRA Consultants',desc:'Premium commercial, residential and retail properties managed by AYRA Consultants across Karachi, Lahore and Islamabad.'},
 'clients':{path:'/clients',title:'Our Clients — AYRA Consultants',desc:"200+ brands trust AYRA Consultants, including Levi's, Bahria Town, Nishat Textiles, Civil Aviation Authority and Junaid Jamshed."},
+'c-diners':{path:'/clients/diners',title:"Diner's — Client Partner — AYRA Consultants",desc:"How AYRA Consultants partners with Diner's across PR & Event Management and Lease & Retail Management."},
 'contact':{path:'/contact',title:'Contact Us — AYRA Consultants',desc:'Get in touch with AYRA Consultants — DHA Karachi head office, pan-Pakistan operations. Call +92-321-2421104 or send us a message.'}
 };
 function setMetaDescription(text){
@@ -832,7 +869,7 @@ nav.style.boxShadow=window.scrollY>40?'0 2px 24px rgba(0,0,0,0.08)':'none';
 });
 document.getElementById('ham').addEventListener('click',function(){document.getElementById('mob').classList.toggle('open')});
 function cm(){document.getElementById('mob').classList.remove('open')}
-// Contact form submission (Netlify Forms via fetch, no page reload)
+// Contact form submission (Formspree via fetch, no page reload)
 document.getElementById('contactForm').addEventListener('submit',function(e){
 e.preventDefault();
 var form=e.target;

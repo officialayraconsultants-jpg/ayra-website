@@ -1,4 +1,0 @@
----
-title: RABBIYA
-role: FOUNDER
----
